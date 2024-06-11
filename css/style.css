@@ -1,0 +1,242 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #609f69;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo medio transparente */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Proximidad - Agrupar elementos relacionados */
+.satellite-image,
+.data-grid,
+.info-area {
+    margin-bottom: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #004d00; /* Verde oscuro para los títulos */
+}
+
+/* Similitud - Usar estilos similares para elementos similares */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    color: #333; /* Color de texto */
+    max-height: 400px;
+    overflow-y: auto; /* Agregar scroll vertical */
+    display: block;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo de tabla semi-transparente */
+}
+
+th, td {
+    border: 2px solid rgba(0, 0, 0, 0.5); /* Bordes semi-transparentes */
+    padding: 4px; /* Reducir el padding para disminuir la altura de las celdas */
+    text-align: left;
+    font-size: 14px; /* Tamaño de letra reducido */
+}
+
+th {
+    background-color: #f2c200; /* Color amarillo para los encabezados de la tabla */
+    color: #004d00; /* Texto en verde oscuro */
+}
+
+tr:nth-child(even) {
+    background-color: #eaf5ea; /* Color verde claro para filas pares */
+}
+
+tr.selected {
+    background-color: #00ff00; /* Color verde para la fila seleccionada */
+}
+
+/* Continuidad - Guiar la vista a través del contenido suavemente */
+.container > div {
+    transition: transform 0.3s;
+}
+
+.container > div:hover {
+    transform: scale(1.02);
+}
+
+/* Cierre - Crear bordes y fondos que ayuden a definir áreas */
+.satellite-image {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+}
+
+/* Figura-Fondo - Crear contraste entre el texto y el fondo */
+.info-area p {
+    background-color: #f4f4f9;
+    padding: 10px;
+    border-left: 4px solid #f2c200; /* Borde amarillo */
+    line-height: 1.6;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.info-area p:before {
+    content: "ℹ️";
+    font-size: 24px;
+    color: #004d00; /* Icono en verde oscuro */
+    margin-right: 10px;
+}
+
+.info-area {
+    background-color: rgba(250, 250, 250, 0.9); /* Fondo semi-transparente */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para las pestañas */
+.tabs {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.tablink {
+    background-color: #ddd; /* Color amarillo */
+    color: #004d00; /* Verde oscuro */
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%; /* Dos pestañas, cada una ocupa la mitad del ancho */
+    text-align: center;
+}
+
+.tablink:hover {
+    background-color: #f2c200;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-top: none;
+    overflow-x: auto; /* Agrega desplazamiento horizontal si la tabla es demasiado ancha */
+}
+
+/* Estilo para hacer el contenedor del mapa más pequeño */
+.satellite-image {
+    width: 45%;
+    height: 20%; /* Reducido a la mitad del tamaño original */
+}
+
+/* Estilo para hacer el mapa más pequeño */
+#map {
+    width: 100%;
+    height: 500px;
+}
+
+/* Estilo para hacer la tabla más grande */
+#tabla1,
+#tabla2 {
+    width: 100%;
+    max-width: 600px; /* Ajustado según sea necesario */
+}
+
+/* Estilo para el área de la cuadrícula de datos */
+.data-grid {
+    width: 50%; /* Ajusta el ancho según sea necesario */
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    float: right; /* Sitúa el contenedor a la derecha */
+}
+
+/* Mejoras adicionales */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .satellite-image,
+    .data-grid,
+    .info-area {
+        width: 100%;
+    }
+
+    .tablink {
+        width: 100%;
+    }
+}
+
+/* Estilos para el botón de buscar y la lista desplegable */
+#dropdown-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+#rio-select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#buscar-btn {
+    padding: 10px 20px;
+    background-color: #004d00; /* Verde oscuro */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#buscar-btn:hover {
+    background-color: #003300; /* Verde más oscuro */
+}
+
+/* Popup de error */
+.popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f44336;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.popup-text {
+    margin-right: 20px;
+}
+
+.popup button {
+    background-color: white;
+    color: #f44336;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
